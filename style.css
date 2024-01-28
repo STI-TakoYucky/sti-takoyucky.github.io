@@ -55,6 +55,13 @@ p {
     color: white;
 }
 
+@media only screen and (max-width: 600px){
+    p {
+        font-size: 1.4rem;
+        color: white;
+    }
+}
+
 .container {
     margin-inline: 10rem;
     padding: 15rem;
@@ -121,11 +128,18 @@ p {
 
 .name-header-div .hero-FN {
     z-index: 1;
+    width: clamp(20rem, 40.5vw, 70rem);
 }
 
 .name-header-div .hero-FN-shadow {
     position: absolute;
     top: 1rem;
+    width: clamp(20rem, 40.5vw, 70rem);
+}
+
+.hero-header-img {
+    width: clamp(10rem, 13%, 20rem);
+    height: auto;
 }
 .bg-img-container {
     overflow: hidden;
@@ -155,6 +169,8 @@ p {
     border-radius: 25px;
     position: absolute;
     left: -15rem;
+    background: none;
+    border: 2px solid #91DBB7;
 }
 
 .name-header-div::after {
@@ -165,6 +181,8 @@ p {
     border-radius: 25px;
     position: absolute;
     right: -15rem;
+    border: 2px solid #91DBB7;
+    background: none;
 }
 /** HERO-SECTION-END **/
 
@@ -212,9 +230,15 @@ p {
     gap: 5rem;
 }
 
+@media only screen and (max-width: 600px){
+    .aboutme-article {
+        flex-direction: column;
+    }
+}
+
 .aboutme-article img {
-    height: 40rem;
-    width: 40rem;
+    height: auto;
+    width: 87.4%;
     border-radius: 25px;
     box-shadow: #91DBB7 10px 10px;
 }
@@ -222,10 +246,27 @@ p {
 .aboutme-content {
     line-height: 3rem;
     min-width: 85rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: space-between;
 }
 
-.aboutme-list li {
+.aboutme-list {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: #91DBB7 10px 10px;
+}
+
+.aboutme-list li p {
     margin-bottom: 1rem;
+    color: black !important;
+}
+
+.aboutme-list li p span {
+    margin-right: 1rem;
 }
 
 .about-me-desc-container {
@@ -236,16 +277,10 @@ p {
     box-shadow: #91DBB7 10px 10px;
 }
 
-.content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-.content-container ul {
+.aboutme-content ul {
     list-style: none;
 }
-.content-container span {
+.aboutme-content span {
     color: #91DBB7;
     font-weight: bold;
 }
