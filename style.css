@@ -56,14 +56,18 @@ p {
 }
 
 @media only screen and (max-width: 600px){
-    p {
-        font-size: 1.4rem;
-        color: white;
+    
+    :root {
+        font-size: 7px;
+    }
+
+    .container {
+        padding: 10rem;
     }
 }
 
 .container {
-    margin-inline: 10rem;
+    margin-inline: auto;
     padding: 15rem;
 }
 
@@ -76,10 +80,12 @@ p {
     font-weight: 900;
     text-align: center;
     position: relative;
+    white-space: nowrap;
 }
 
 .section-format  {
     position: relative;
+    white-space: nowrap;
 }
 
 .section-format  h1::after,.section-format  h1::before {
@@ -97,6 +103,25 @@ p {
 
 .section-format  h1::before {
     left: 0rem;
+}
+
+@media only screen and (max-width: 1450px){
+
+    .section-format  h1::after{
+        position: relative;
+        width: 60vw;
+    }
+    .section-format h1::before{
+        display: none;
+    }
+
+    .section-format h1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 /** HERO-SECTION-START **/
@@ -226,31 +251,36 @@ p {
 
 .aboutme-article {
     display: flex;
+    width: 100%;
     justify-content: space-evenly;
-    gap: 5rem;
+    gap: 3rem;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 992px){
     .aboutme-article {
         flex-direction: column;
+        align-items: center;
     }
 }
 
-.aboutme-article img {
-    height: auto;
-    width: 87.4%;
-    border-radius: 25px;
+
+.avatar-img {
+    width: 16.6%;
+    min-width: 20rem;
+    height: 100%;
+    max-width: 40rem;
     box-shadow: #91DBB7 10px 10px;
+    border-radius: 25px;
 }
 
 .aboutme-content {
     line-height: 3rem;
-    min-width: 85rem;
-    height: 100%;
+    min-width: 25rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: space-between;
+    max-width: 100rem;
 }
 
 .aboutme-list {
@@ -263,6 +293,7 @@ p {
 .aboutme-list li p {
     margin-bottom: 1rem;
     color: black !important;
+    white-space: nowrap;
 }
 
 .aboutme-list li p span {
@@ -308,7 +339,6 @@ p {
 .skills-item {
     background-color: white;
     min-width: 40rem;
-    max-width: 40rem;
     font-family: 'Nunito Sans';
     border-radius: 10px;
     padding: 1.5rem;
@@ -473,6 +503,7 @@ p {
 footer {
     height: 10rem;
     background-color: #2c2e31;
+    white-space: nowrap;
 }
 
 .footer-container {
@@ -490,7 +521,7 @@ footer {
 }
 
 .footer-caption h1 {
-    font-size: 3.2rem;
+    font-size: clamp(1.8rem, 1.667vw, 3.2rem);
     font-weight: 900;
     text-transform: uppercase;
     display: flex;
@@ -511,7 +542,7 @@ footer {
 
 .socials {
     color: white;
-    font-size: 3.5rem;
+    font-size: clamp(1.4rem, 1.823vw, 3.5rem);
     cursor: default;
 }
 
@@ -528,6 +559,34 @@ footer {
     margin: 2rem;
     text-decoration: none;
     color: white;
+}
+
+@media only screen and (max-width: 1450px){
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .footer-caption {
+        flex-direction: column;
+    }
+
+        
+    .footer-sitename::after {
+        width: 60vw;
+        height: 1rem;
+    }
+
+    .footer-caption h1 {
+        flex-direction: column;
+    }
+
+    .email-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /** FOOTER-END **/
