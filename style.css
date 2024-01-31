@@ -55,6 +55,11 @@ p {
     color: white;
 }
 
+.container {
+    margin-inline: auto;
+    padding: 15rem;
+}
+
 @media only screen and (max-width: 600px){
     
     :root {
@@ -62,13 +67,8 @@ p {
     }
 
     .container {
-        padding: 10rem;
+        padding: 10rem 5rem;
     }
-}
-
-.container {
-    margin-inline: auto;
-    padding: 15rem;
 }
 
 .section-format h1 {
@@ -216,19 +216,37 @@ p {
 .aboutme-section {
     background-color: #252525;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.aboutme-article {
+    background-color: white;
+    padding: 5rem;
+    color: black;
+    border-radius: 25px;
+    box-shadow: #91DBB7 10px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    max-width: 60rem;
+    justify-content: space-evenly;
+    gap: 5rem;
 }
 
 .aboutme-section-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    width: 100%;
+    padding-inline: 15rem;
 }
 
 .aboutme-section-header h1 {
-    font-size: 2.6rem;
+    font-size: 3.2rem;
     font-family: 'Nunito Sans';
     font-weight: 900;
     color: white;
@@ -246,14 +264,7 @@ p {
     background-color: #91DBB7;
     position: relative;
     margin-left: 3rem;
-}
-
-
-.aboutme-article {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    gap: 3rem;
+    background: none;
 }
 
 @media only screen and (max-width: 992px){
@@ -265,29 +276,20 @@ p {
 
 
 .avatar-img {
-    width: 16.6%;
-    min-width: 20rem;
+    width: 40%;
     height: 100%;
     max-width: 40rem;
-    box-shadow: #91DBB7 10px 10px;
-    border-radius: 25px;
+    border-radius: 50%;
 }
 
 .aboutme-content {
     line-height: 3rem;
-    min-width: 25rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 3rem;
     justify-content: space-between;
     max-width: 100rem;
-}
-
-.aboutme-list {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 25px;
-    box-shadow: #91DBB7 10px 10px;
 }
 
 .aboutme-list li p {
@@ -298,14 +300,6 @@ p {
 
 .aboutme-list li p span {
     margin-right: 1rem;
-}
-
-.about-me-desc-container {
-    background-color: white;
-    padding: 2rem;
-    color: black;
-    border-radius: 25px;
-    box-shadow: #91DBB7 10px 10px;
 }
 
 .aboutme-content ul {
@@ -505,7 +499,7 @@ p {
 footer {
     height: 10rem;
     background-color: #2c2e31;
-    white-space: nowrap;
+    text-align: center;
 }
 
 .footer-container {
@@ -523,7 +517,7 @@ footer {
 }
 
 .footer-caption h1 {
-    font-size: clamp(2.8rem, 1.667vw, 3.2rem);
+    font-size: clamp(2rem, 1.667vw, 3.2rem);
     font-weight: 900;
     text-transform: uppercase;
     display: flex;
@@ -546,6 +540,7 @@ footer {
     color: white;
     font-size: clamp(1.8rem, 1.823vw, 3.5rem);
     cursor: default;
+    white-space: nowrap;
 }
 
 .socials i {
@@ -591,7 +586,6 @@ footer {
     }
 
     .email-container h1 {
-        white-space: wrap;
         text-align: center;
     }
 }
