@@ -58,7 +58,7 @@ p {
 @media only screen and (max-width: 600px){
     
     :root {
-        font-size: 8px;
+        font-size: 7px;
     }
 
     .container {
@@ -159,7 +159,7 @@ p {
 .name-header-div .hero-FN-shadow {
     position: absolute;
     top: 1rem;
-    width: clamp(20rem, 40.5vw, 70rem);
+    width: clamp(40rem, 40.5vw, 70rem);
 }
 
 .hero-header-img {
