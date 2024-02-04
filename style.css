@@ -122,33 +122,100 @@ p {
         align-items: center;
     }
 
+    .aboutme-section-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .aboutme-section-header::after {
+        position: relative;
+        width: 60vw;
+        margin: 0 !important;
+    }
+
 }
 
 /** HERO-SECTION-START **/
+
+.parallax {
+    display: grid;
+    grid-template-areas: "stack";
+    height: 100vh;
+    width: 100%;
+}
+
+.parallax > *, .hero-section {
+    grid-area: stack;
+    animation: parallax linear;
+    animation-timeline: scroll();
+}
+
+.parallax > img {
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
+.parallax .earth {
+    --parallax-speed: 10;
+    width: 30%;
+    top: 10rem;
+    z-index: 2;
+}
+
+.parallax .moon {
+    width: 12%;
+    top: 9rem;
+    left: 32rem;
+    --parallax-speed: 15;
+}
+
+.parallax .ufo-cat {
+    width: 5%;
+    left: 9rem;
+    top: 10rem;
+    --parallax-speed: 14;
+}
+
+.parallax .satellite {
+    width: 7%;
+    left: 5rem;
+    top: 33rem;
+    --parallax-speed: 13;
+}
+
+@keyframes parallax {
+    to {
+        transform: translateY(calc(var(--parallax-speed) * 200px));
+    }
+}
 
 .hero-section {
     position: relative;
     overflow: hidden;
     height: 100vh;
+    --parallax-speed: 15;
 }
 
 .hero-container {
     background-image:linear-gradient(#1D1D1D, #323335);
+    z-index: 0;
+    position: relative;
     height: inherit;
     width: inherit;
-    z-index: 0;
-    gap: 2rem;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .hero-container p {
     color: #91DBB7; 
+    z-index: 1;
 }
 
 .name-header-div {
     position: relative;
+    gap: 2rem;
 }
 
 .name-header-div .hero-FN {
@@ -158,33 +225,15 @@ p {
 
 .name-header-div .hero-FN-shadow {
     position: absolute;
-    top: 1rem;
+    bottom: 3.5rem;
     width: clamp(40rem, 40.5vw, 70rem);
 }
 
-.hero-header-img {
-    width: clamp(10rem, 13%, 20rem);
+.hello-img {
+    width: clamp(10rem, 13vw, 20rem);
     height: auto;
+    z-index: 1;
 }
-.bg-img-container {
-    overflow: hidden;
-    position: absolute;
-    left: 50rem;
-    top: 50rem;
-}
-
-.smoke-img {
-    position: absolute;
-    top: 30rem;
-    right: -60rem;
-    z-index: 12;
-} .img-2 {
-    position: absolute;
-    top: -30rem;
-    left: -60rem;
-    transform: rotate(180deg);
-}
-
 
 .name-header-div::before {
     content: "";
@@ -209,6 +258,37 @@ p {
     border: 2px solid #91DBB7;
     background: none;
 }
+
+.neon-mist {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    opacity: .6;
+}
+
+.neon-mist-item {
+    /* background-color: #202357; */
+    background-color: #7B87EB;
+    position: relative;
+    width: 50vw;
+    min-width: 60rem;
+    min-height: 60rem;
+    height: 50vw;
+    border-radius: 100%;
+    filter: blur(15rem);
+    
+}
+
+.mist-1 {
+    left: -30%;
+    top: -20rem;
+}
+
+.mist-2 {
+    background-color: #91DBB7;
+    right: -70%;
+    bottom: -20rem;
+}
 /** HERO-SECTION-END **/
 
 /** ABOUTME-SECTION-START **/
@@ -220,6 +300,7 @@ p {
     justify-content: center;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 .aboutme-article {
