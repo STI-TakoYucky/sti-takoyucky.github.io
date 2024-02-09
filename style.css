@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Nunito Sans";
 }
 
 /** UTIL CLASSES - START **/
@@ -71,9 +72,8 @@ p {
     }
 }
 
-.section-format h1 {
+.section-header h1 {
     color: white;
-    font-family: 'Nunito Sans';
     font-size: 3.2rem;
     letter-spacing: .4rem;
     text-transform: uppercase;
@@ -88,7 +88,7 @@ p {
     white-space: nowrap;
 }
 
-.section-format  h1::after,.section-format  h1::before {
+.section-header h1::after, .section-header h1::before {
     content: "";
     width: 35%;
     position: absolute;
@@ -101,21 +101,21 @@ p {
     right: 0;
 }
 
-.section-format  h1::before {
+.section-header h1::before {
     left: 0rem;
 }
 
 @media only screen and (max-width: 1450px){
 
-    .section-format  h1::after{
+    .section-header h1::after{
         position: relative;
         width: 60vw;
     }
-    .section-format h1::before{
+    .section-header h1::before{
         display: none;
     }
 
-    .section-format h1 {
+    .section-header h1{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -134,6 +134,7 @@ p {
         position: relative;
         width: 60vw;
         margin: 0 !important;
+        top: 1.5rem;
     }
 
 }
@@ -161,27 +162,31 @@ p {
 
 .parallax .earth {
     --parallax-speed: 10;
-    width: 30%;
+    max-width: 30%;
+    min-width: 42rem;
     top: 10rem;
     z-index: 2;
 }
 
 .parallax .moon {
-    width: 12%;
+    min-width: 15rem;
+    max-width: 12%;
     top: 9rem;
     left: 32rem;
     --parallax-speed: 15;
 }
 
 .parallax .ufo-cat {
-    width: 5%;
+    min-width: 10rem;
+    max-width: 5%;
     left: 9rem;
     top: 10rem;
     --parallax-speed: 14;
 }
 
 .parallax .satellite {
-    width: 7%;
+    max-width: 7%;
+    min-width: 13rem;
     left: 5rem;
     top: 33rem;
     --parallax-speed: 13;
@@ -198,6 +203,7 @@ p {
     overflow: hidden;
     height: 100vh;
     --parallax-speed: 15;
+    z-index: -1;
 }
 
 .hero-container {
@@ -328,7 +334,6 @@ p {
 
 .aboutme-section-header h1 {
     font-size: 3.2rem;
-    font-family: 'Nunito Sans';
     font-weight: 900;
     color: white;
     letter-spacing: .6rem;
@@ -353,6 +358,11 @@ p {
         flex-direction: column;
         align-items: center;
     }
+
+    .parallax .moon {
+        left: 25rem;
+    }
+    
 }
 
 
@@ -413,15 +423,13 @@ p {
 
 .skills-item {
     background-color: white;
-    
-    font-family: 'Nunito Sans';
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: #91DBB7 10px 10px;
 }
 
 #skill-title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
 }
 
 .progress-bar{
@@ -481,7 +489,6 @@ p {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    font-family: "Nunito Sans";
     box-shadow: black .5rem .5rem 1rem;
 }
 
@@ -518,7 +525,6 @@ p {
 }
 .project-title {
     font-size: 2rem;
-    font-family: 'Nunito Sans';
     font-weight: 900;
     letter-spacing: .3rem;
     text-transform: uppercase;
@@ -552,7 +558,6 @@ p {
     background-color: #7B87EB;
     cursor: pointer;
     color: white;
-    font-family: 'Nunito Sans';
     transition: all .3s;
 }
 
@@ -575,23 +580,92 @@ p {
 /** PROJECT-SECTION-END **/
 
 
+/** WEBSITE-HISTORY-SECTION-START **/
+.web-history-section {
+    background-color: #2c2e31;
+}
+
+.web-history-container{
+   display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.history-container {
+    margin-top: 5rem;
+    max-width: 60rem;
+    white-space: wrap;
+}
+.history-item {
+    color: white;
+    margin-bottom: 15rem;
+    position: relative;
+}
+
+.history-item-title {
+    font-size: 2.2rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #91DBB7;
+}
+
+.history-item-date {
+    margin-top: .1rem;
+    font-size: 1.6rem;
+}
+.history-item-desc {
+    margin-top: 2rem;
+}
+
+.history-description-container {
+    max-width: 100%;
+    margin-left: 5rem;
+    margin-top: -2.5rem;
+}
+
+.history-circle {
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    position: relative;
+}
+
+.history-item span {
+    content: "";
+    width: .8rem;
+    height: 230%;
+    position: absolute;
+    top: 1rem;
+    left: .6rem;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.last-item span {
+    display: none;
+}
+
+
+
+/** WEBSITE-HISTORY-SECTION-END **/
+
 /** FOOTER-START **/
 
 footer {
-    height: 10rem;
-    background-color: #2c2e31;
-    text-align: center;
+    background-color: #252525;
+    width: 100%;
+    display: flex;
+    z-index: 1;
 }
 
 .footer-container {
     justify-content: space-between;
     align-items: center;
-    background-color: #2c2e31;
 }
 
 .footer-caption {
     color: white;
-    font-family: 'Nunito Sans';
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -644,6 +718,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 5rem;
+        text-align: center;
     }
 
     .footer-caption {
@@ -671,4 +746,3 @@ footer {
     }
 }
 
-/** FOOTER-END **/
